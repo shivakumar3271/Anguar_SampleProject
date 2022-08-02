@@ -1,0 +1,14 @@
+<label for="name">Name: </label>
+<input id="name" type="text" [formControl]="name">
+
+
+<p>Value: {{ name.value }}</p>
+
+<button type="button" (click)="updateName()">Update Name</button>   
+
+
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()"></form>
+
+
+<p>Complete the form to enable button.</p>
+<button type="submit" [disabled]="!profileForm.valid">Submit</button>
